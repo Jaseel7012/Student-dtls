@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,6 +20,7 @@ public class Studentdtls {
     }
 
     public static void main(String[] args) {
+        ArrayList<String> jsonarray=new ArrayList<>();
         Scanner sc=new Scanner(System.in);
         ArrayList<Studentdtls> s=new ArrayList<Studentdtls>();
         while (true){
@@ -28,12 +31,14 @@ public class Studentdtls {
                 case 1:
                     Scanner sc1=new Scanner(System.in);
                     System.out.println("admision number");
+
                     int ad=sc1.nextInt();
                     System.out.println("name");
                     String nme=sc1.next();
                     System.out.println("college name");
                     String clg=sc1.next();
                     s.add(new Studentdtls(ad,nme,clg));
+                    jsonarray.add(new Gson().toJson(s));
                     break;
                 case 2:
                     for (Studentdtls stu:s){
@@ -64,8 +69,11 @@ public class Studentdtls {
                             break;
                         }
                     }break;
+
                 case 5:
                     System.exit(0);
+                case 6:
+                    System.out.println(jsonarray);
 
             }
         }
