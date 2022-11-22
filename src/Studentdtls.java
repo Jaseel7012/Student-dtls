@@ -49,6 +49,10 @@ public class Studentdtls {
                             System.out.println("found");
                             break;
                         }
+                        else {
+                            System.out.println("Not found");
+                            break;
+                        }
                     }break;
                 case 4:
                     System.out.println("admission number");
